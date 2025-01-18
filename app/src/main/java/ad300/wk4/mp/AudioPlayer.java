@@ -1,11 +1,12 @@
 package ad300.wk4.mp;
 
-public class AudioPlayer implements MediaPlayer{
+public class AudioPlayer extends BasePlayer{
 
     @Override
     public void play(Media content) throws Exception{
         if(content.format.equals(Media.Format.VINYL)){
             System.out.println("Audio playing"); 
+            super.play(content);
             System.out.println("TITLE: "+content.getTitle());
             System.out.println("FORMAT: "+Media.Format.VINYL);
         }
@@ -16,8 +17,11 @@ public class AudioPlayer implements MediaPlayer{
     }
 
     @Override
-    public void pause(){
-        System.out.println("Audio paused");
+    public void pause() throws Exception{
+        if (this.state.equals(BasePlayer.State.PLAY)){
+            super.pause();
+        }
+        else throw new Exception("Unable to pause when state is : "+this.state);
     }
 
     @Override
