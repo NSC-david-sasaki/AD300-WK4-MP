@@ -13,7 +13,7 @@ public class BasePlayer implements MediaPlayer{
     }
 
     @Override
-    public void stop() {
+    public void stop() throws Exception {
         setState(BasePlayer.State.STOP);
     }
 

@@ -11,5 +11,11 @@ This project uses Gradle
 
 `./gradlew run`
 
-## Dependencies
+`./gradlew test`
 
+## Workflow Automation
+This project uses GitHub workflows to build, test, and release
+
+## Dependencies
+Gradle 8.12
+Junit 5.11.4

@@ -17,6 +17,8 @@ public class Main {
         for (MediaPlayer player : mp){
             for(Media content : library){
                 try {
+                    System.out.println("");
+                    System.out.println(player.toString() + content.toString());
                     player.play(content);
                     player.pause();
                     player.stop();

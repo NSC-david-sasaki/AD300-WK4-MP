@@ -4,8 +4,8 @@ public class AudioPlayer extends BasePlayer{
 
     @Override
     public void play(Media content) throws Exception{
-        if(content.format.equals(Media.Format.VINYL)){
-            System.out.println("Audio playing"); 
+        if((content.format.equals(Media.Format.VINYL))){
+            System.out.println("Audio playing");             
             super.play(content);
             System.out.println("TITLE: "+content.getTitle());
             System.out.println("FORMAT: "+Media.Format.VINYL);
@@ -25,8 +25,11 @@ public class AudioPlayer extends BasePlayer{
     }
 
     @Override
-    public void stop(){
-        System.out.println("Audio stopped");
+    public void stop() throws Exception{
+        if (this.state.equals((BasePlayer.State.PLAY))){
+            System.out.println("Audio stopped");
+        }
+        else throw new Exception("Unable to stop when state is : "+this.state);
     }
 
     
