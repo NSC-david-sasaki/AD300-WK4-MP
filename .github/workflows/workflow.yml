@@ -53,3 +53,19 @@ jobs:
         with:
           name: application-jar
           path: app/build/libs/*.jar
+      
+      - name: Create Release
+        id: create_release
+        uses: gh action/create-release@v1
+        with:
+            tag_name: ${{ github.ref }}   # This will use the Git tag as release tag
+            release_name: Release ${{ github.ref }}
+            body: "This is an automated release of the application JAR."
+  
+      - name: Upload JAR to release
+        uses: gh action/upload-release-asset@v1
+        with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: app/build/libs/app.jar
+            asset_name: app.jar
+            asset_content_type: application/java-archive
