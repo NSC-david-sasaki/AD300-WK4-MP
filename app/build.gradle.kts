@@ -36,7 +36,6 @@ application {
     mainClass = "ad300.wk4.mp.Main"
 }
 
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
+tasks.test {
     useJUnitPlatform()
 }

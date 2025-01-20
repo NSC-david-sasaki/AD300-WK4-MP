@@ -42,7 +42,7 @@ jobs:
         run: ./gradlew test --no-daemon
 
       - name: Generate Dependency Graph
-        run: ./gradlew dependencies --configuration compileClasspath --scan
+        run: ./gradlew :app:dependencies --configuration compileClasspath
 
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v4
