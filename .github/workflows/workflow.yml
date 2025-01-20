@@ -11,6 +11,8 @@ jobs:
   build-and-test:
 
     runs-on: ubuntu-latest
+    env:
+      ORG_GRADLE_TERMS_OF_SERVICE_CONSENT: yes
 
     permissions:
       contents: write
