@@ -1,4 +1,3 @@
-# .github/workflows/workflow-b.yml
 name: Auto Release
 
 on:
