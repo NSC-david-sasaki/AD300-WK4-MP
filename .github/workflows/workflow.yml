@@ -81,6 +81,6 @@ jobs:
           artifact_name=$(basename $artifact_path)
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Content-Type: application/zip" \
+            -H "Content-Type: application/java-archive" \
             --data-binary @$artifact_path \
             "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.release_id }}/assets?name=$artifact_name"
