@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ORG_GRADLE_TERMS_OF_SERVICE_CONSENT: yes
+      GH_TOKEN: ${{ github.token }}
 
     permissions:
       contents: write
