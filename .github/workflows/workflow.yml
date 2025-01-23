@@ -79,4 +79,4 @@ jobs:
         run: |
           artifact_path=$(ls app/build/libs/*.jar)
           artifact_name=$(basename $artifact_path)
-          gh release upload ${{ steps.create_release.outputs.release_id }} "$artifact_path" --clobber
+          gh release upload ${{ github.ref_name }} "$artifact_path" --clobber
